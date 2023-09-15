@@ -33,7 +33,7 @@ resource "aws_internet_gateway" "igw_1" {
 }
 
 # Step 5 Route table for Public Subnet
-resource "aws_route" "PublicRT" {
+resource "aws_route_table" "PublicRT" {
   vpc_id = aws_vpc.main.id
   route{
 	cidr_block = "0.0.0.0/0"
@@ -45,6 +45,6 @@ resource "aws_route" "PublicRT" {
 resource "aws_route_table_association" "PublicRTassociation"{
 
 	subnet_id = aws_subnet.PublicSubnet.id
-	route_table_id = aws_route.PublicRT.id
+	route_table_id = aws_route_table.PublicRT.id
 
 }
