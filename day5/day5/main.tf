@@ -10,7 +10,7 @@ module "ec2_instance" {
   
 }
 
-module "VPC" {
+module "vpc" {
 
     source = "./day5/modules/vpc"
     cidr_block_vpc = "10.0.0.0/16"
